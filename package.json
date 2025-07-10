@@ -1,0 +1,22 @@
+{
+  "name": "complain-management",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "concurrently \"npm run dev --prefix Server\" \"npm run dev --prefix Client\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@mui/icons-material": "^7.2.0",
+    "@mui/material": "^7.2.0",
+    "concurrently": "^9.2.0",
+    "firebase": "^11.10.0",
+    "framer-motion": "^12.23.0"
+  }
+}
