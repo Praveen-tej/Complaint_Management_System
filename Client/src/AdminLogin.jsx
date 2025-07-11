@@ -4,8 +4,7 @@ import AdminDashboard from "./AdminDashboard";
 const departments = [
   "it",
   "cse",
-  "ec"
-,  // Add more as needed
+  "ec",
 ];
 
 export default function AdminLogin() {
@@ -22,7 +21,6 @@ export default function AdminLogin() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // For now, just show a message. You can add real authentication later.
     if (form.department && form.email) {
       setLoggedIn(true);
     } else {
