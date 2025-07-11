@@ -4,21 +4,21 @@ import { signInWithPopup } from "firebase/auth";
 
 export default function GoogleSignIn({ onSignIn }) {
   const [error, setError] = useState("");
-
   const handleSignIn = async () => {
     try {
       provider.setCustomParameters({ prompt: "select_account" });
       const result = await signInWithPopup(auth, provider);
       const email = result.user.email.toLowerCase();
       // Regex for college email: any two digits for batch
-      const collegeEmailRegex = /^[a-zA-Z0-9]+[0-9]{2}(it|cse|ec)@psnacet\.edu\.in$/;
+      const collegeEmailRegex =
+        /^[a-zA-Z0-9]+[0-9]{2}(it|cse|ec)@psnacet\.edu\.in$/;
       if (!collegeEmailRegex.test(email)) {
-        setError("Please sign in with your official college email. Personal emails are not allowed.");
-        // Optionally, sign out the user
+        setError(
+          "Please sign in with your official college email. Personal emails are not allowed."
+        );
         await auth.signOut();
         return;
       }
-
       setError("");
       onSignIn(result.user);
     } catch (err) {
@@ -49,7 +49,11 @@ export default function GoogleSignIn({ onSignIn }) {
         />
         Sign in with Google
       </button>
-      {error && <div className="message" style={{ color: "red", marginTop: "1rem" }}>{error}</div>}
+      {error && (
+        <div className="message" style={{ color: "red", marginTop: "1rem" }}>
+          {error}
+        </div>
+      )}
     </div>
   );
 }
