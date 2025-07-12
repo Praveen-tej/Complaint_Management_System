@@ -4,12 +4,14 @@ import { signInWithPopup } from "firebase/auth";
 
 export default function GoogleSignIn({ onSignIn }) {
   const [error, setError] = useState("");
+
   const handleSignIn = async () => {
     try {
       provider.setCustomParameters({ prompt: "select_account" });
       const result = await signInWithPopup(auth, provider);
       const email = result.user.email.toLowerCase();
-      // Regex for college email: any two digits for batch
+
+      
       const collegeEmailRegex =
         /^[a-zA-Z0-9]+[0-9]{2}(it|cse|ec)@psnacet\.edu\.in$/;
       if (!collegeEmailRegex.test(email)) {
