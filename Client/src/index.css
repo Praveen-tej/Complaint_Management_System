@@ -1,90 +1,137 @@
 body {
-    background: linear-gradient(135deg, #e0e7ff 0%, #f3e8ff 100%);
-    min-height: 100vh;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Segoe UI', Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .form-container {
-    background: #fff;
-    max-width: 500px;
-    margin: 32px auto;            
-    padding: 24px 30px;           
-    border-radius: 10px;
-    box-shadow: 0 8px 32px rgba(80, 0, 120, 0.12);
-  }
-  
-  .form-container h2 {
-    text-align: center;
-    color: #7c3aed;
-    margin-bottom: 16px;          
-  }
-  
-  .form-group {
-    margin-bottom: 14px;
-  }
-  
-  .form-group label {
-    display: block;
-    font-weight: 600;
-    color: #444;
-    margin-bottom: 4px;           
-  }
-  
-  .form-group input,
-  .form-group select,
-  .form-group textarea {
-    width: 100%;
-    padding: 9px;                 
-    border: 1px solid #d1d5db;
-    border-radius: 6px;
-    font-size: 15px;              
-    background: #f9fafb;
-  }
-  
-  .form-group textarea {
-    resize: vertical;
-    min-height: 60px;             
-  }
-  
-  .submit-btn {
-    width: 100%;
-    background: #7c3aed;
-    color: #fff;
-    font-weight: bold;
-    padding: 10px;                
-    font-size: 16px;              
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background 0.2s;
-  }
-  
-  .submit-btn:hover {
-    background: #5b21b6;
-  }
-  
-  .message {
-    text-align: center;
-    margin-top: 12px;             
-    font-weight: 600;
-    font-size: 15px;              
-  }
-  
-  .spinner {
-    margin: 0 auto 10px auto;
-    border: 4px solid #e0e7ff;
-    border-top: 4px solid #7c3aed;
-    border-radius: 50%;
-    width: 32px;
-    height: 32px;
-    animation: spin 1s linear infinite;
-  }
-  @keyframes spin {
-    0% { transform: rotate(0deg);}
-    100% { transform: rotate(360deg);}
-  }
+  background: #f5f7fa;
+  min-height: 100vh;
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  color: #22223b;
+  margin: 0;
+  padding: 0;
+}
+
+.form-container {
+  background: #fff;
+  max-width: 500px;
+  margin: 3rem auto;
+  padding: 2.5rem 2.5rem 2rem 2.5rem;
+  border-radius: 1.2rem;
+  box-shadow: 0 8px 32px rgba(99, 102, 241, 0.10);
+}
+
+.form-container h2 {
+  text-align: center;
+  color: #6366f1;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  color: #22223b;
+  margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.85rem;
+  border: 1.5px solid #e0e7ef;
+  border-radius: 0.7rem;
+  font-size: 1rem;
+  transition: border 0.2s;
+  background: #f8fafc;
+  color: #22223b;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #6366f1;
+  outline: none;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+.submit-btn {
+  width: 100%;
+  background: linear-gradient(90deg, #6366f1 0%, #06b6d4 100%);
+  color: #fff;
+  font-weight: bold;
+  padding: 1rem;
+  border: none;
+  border-radius: 0.7rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.08);
+}
+
+.submit-btn:hover {
+  background: linear-gradient(90deg, #06b6d4 0%, #6366f1 100%);
+  box-shadow: 0 4px 16px rgba(6, 182, 212, 0.10);
+}
+
+.message {
+  text-align: center;
+  margin-top: 1rem;
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: #06b6d4;
+}
+
+nav {
+  background: linear-gradient(90deg, #6366f1 0%, #06b6d4 100%);
+  padding: 16px 0;
+  margin-bottom: 32px;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.08);
+}
+
+nav a {
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.2s;
+}
+
+nav a:hover {
+  color: #f59e42;
+}
+
+ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+li {
+  background: #f8fafc;
+  border-radius: 0.7rem;
+  margin-bottom: 1.2rem;
+  padding: 1.2rem 1.5rem;
+  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.06);
+}
+
+.spinner {
+  margin: 0 auto 10px auto;
+  border: 4px solid #e0e7ff;
+  border-top: 4px solid #6366f1;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg);}
+  100% { transform: rotate(360deg);}
+}
   
