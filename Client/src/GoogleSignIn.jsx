@@ -10,7 +10,6 @@ export default function GoogleSignIn({ onSignIn }) {
       const result = await signInWithPopup(auth, provider);
       const email = result.user.email.toLowerCase();
 
-
       const collegeEmailRegex =
         /^[a-zA-Z0-9]+[0-9]{2}(it|cse|ec)@psnacet\.edu\.in$/;
       if (!collegeEmailRegex.test(email)) {
