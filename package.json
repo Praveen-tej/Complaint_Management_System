@@ -15,6 +15,9 @@
     "@emotion/styled": "^11.14.1",
     "@mui/icons-material": "^7.2.0",
     "@mui/material": "^7.2.0",
+    "@react-navigation/native": "^7.1.14",
+    "@react-navigation/stack": "^7.4.2",
+    "axios": "^1.10.0",
     "concurrently": "^9.2.0",
     "firebase": "^11.10.0",
     "framer-motion": "^12.23.0"

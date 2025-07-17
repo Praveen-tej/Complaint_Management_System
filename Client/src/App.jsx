@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import ComplaintForm from "./ComplaintForm";
 import AdminLogin from "./AdminLogin";
 import GoogleSignIn from "./GoogleSignIn";
-
 function Home() {
   return (
     <div className="form-container" style={{ textAlign: "center" }}>
@@ -24,7 +23,6 @@ function ComplaintPage() {
   }
   return <ComplaintForm user={user} />;
 }
-
 function App() {
   return (
     <Router>

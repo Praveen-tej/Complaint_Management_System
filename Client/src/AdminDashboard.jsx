@@ -5,17 +5,17 @@ export default function AdminDashboard({ department }) {
     const [loading, setLoading] = useState(true);
     const [resolvingId, setResolvingId] = useState(null);
 
-    const fetchComplaints = async () => {
+        const fetchComplaints = async () => {
         setLoading(true);
-        try {
-            const res = await fetch(`/api/complaints/${department}`);
-            const data = await res.json();
-            setComplaints(data);
-        } catch (err) {
-            setComplaints([]);
-        }
-        setLoading(false);
-    };
+            try {
+                const res = await fetch(`/api/complaints/${department}`);
+                const data = await res.json();
+                setComplaints(data);
+            } catch (err) {
+                setComplaints([]);
+            }
+            setLoading(false);
+        };
 
     useEffect(() => {
         fetchComplaints();
@@ -80,11 +80,11 @@ export default function AdminDashboard({ department }) {
                             {(!c.status || c.status === "pending") && (
                                 resolvingId === c._id ? (
                                     <div style={{ textAlign: "center", margin: "1rem 0" }}>
-                                        <div className="spinner" />
+                                        <div className="spinner"/>
                                         <div>Resolving problem...</div>
                                     </div>
-                                ) : (
-                                    <button
+                                ):
+                                (   <button
                                         className="submit-btn"
                                         style={{ width: "auto", marginTop: "8px", padding: "6px 18px", fontSize: "14px" }}
                                         onClick={() => handleResolve(c._id)}
