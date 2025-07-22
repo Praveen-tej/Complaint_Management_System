@@ -16,7 +16,6 @@ export default function AdminDashboard({ department }) {
             }
             setLoading(false);
         };
-
     useEffect(() => {
         fetchComplaints();
     }, [department]);

@@ -15,7 +15,6 @@ function Home() {
     </div>
   );
 }
-
 function ComplaintPage() {
   const [user, setUser] = useState(null);
   if (!user) {
@@ -23,6 +22,7 @@ function ComplaintPage() {
   }
   return <ComplaintForm user={user} />;
 }
+
 function App() {
   return (
     <Router>
