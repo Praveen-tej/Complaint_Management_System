@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
-
-export default function AdminDashboard({ department }) {
+  import React, { useEffect, useState } from "react";
+  export default function AdminDashboard({ department }) {
   const [complaints, setComplaints] = useState([]);
   const [loading, setLoading] = useState(true);
   const [resolvingId, setResolvingId] = useState(null);
@@ -15,7 +14,6 @@ export default function AdminDashboard({ department }) {
     }
     setLoading(false);
   };
-  
   useEffect(() => {
     fetchComplaints();
   }, [department]);
@@ -125,4 +123,4 @@ export default function AdminDashboard({ department }) {
       )}
     </div>
   );
-}
+ }
