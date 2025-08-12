@@ -12,7 +12,6 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
 const collegeEmailRegex = /^[a-zA-Z0-9]+[0-9]{2}(it|cse|ec)@psnacet\.edu\.in$/;
