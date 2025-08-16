@@ -14,10 +14,10 @@
     }
     setLoading(false);
   };
+
   useEffect(() => {
     fetchComplaints();
   }, [department]);
-
   const handleResolve = async (id) => {
     setResolvingId(id);
     setTimeout(async () => {
