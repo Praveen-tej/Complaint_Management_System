@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider } from "firebase/auth";
-const  firebaseConfig = {y66
+const  firebaseConfig = {
   apiKey: "AIzaSyBWw5uXuQi9ckdfC-SD5PO6i9ctESq8HmI",
   authDomain:"complaint-management-e4286.firebaseapp.com",
   projectId:"complaint-management-e4286",
