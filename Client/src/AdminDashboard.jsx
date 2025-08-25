@@ -3,6 +3,10 @@ export default function AdminDashboard({ department }) {
   const [complaints, setComplaints] = useState([]);
   const [loading, setLoading] = useState(true);
   const [resolvingId, setResolvingId] = useState(null);
+
+
+
+  
   const fetchComplaints = async () => {
     setLoading(true);
     try {
