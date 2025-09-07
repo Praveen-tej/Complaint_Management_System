@@ -3,9 +3,8 @@ export default function AdminDashboard({ department }) {
   const [complaints, setComplaints] = useState([]);
   const [loading, setLoading] = useState(true);
   const [resolvingId, setResolvingId] = useState(null);
-  
   const fetchComplaints = async () => {
-    setLoading(true);
+   setLoading(true);
     try {
       const res = await fetch(`/api/complaints/${department}`)
       const data = await res.json();
@@ -13,9 +12,7 @@ export default function AdminDashboard({ department }) {
     } catch (err) {
       setComplaints([]);
     }
-    setLoading(false); 
-  };
-   
+    setLoading(false); };
   useEffect(() => {
     fetchComplaints();
   }, [department]);
@@ -38,7 +35,6 @@ export default function AdminDashboard({ department }) {
       setResolvingId(null);
     }, 2000);
   };
-
   const handleRemove = async (id) => {
     if (!window.confirm("Are you sure you want to remove this complaint?"))
       return;
@@ -55,7 +51,6 @@ export default function AdminDashboard({ department }) {
       alert("Failed to remove complaint.");
     }
   };
-
   return (
     <div className="form-container">
       <h2>{department} Department Complaints</h2>
