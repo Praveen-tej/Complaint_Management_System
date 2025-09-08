@@ -2,13 +2,14 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const complaintsRoute = require("./routes/complaints");
-  
+
 require('dotenv').config();
 const app = express();
 
 app.use(cors({
   origin: 'http://localhost:5173'
 }));
+
 app.use(express.json());
 app.use("/api/complaints", complaintsRoute);
 
