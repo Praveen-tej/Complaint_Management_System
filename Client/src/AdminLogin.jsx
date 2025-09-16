@@ -1,12 +1,10 @@
 import React, { useState } from "react";
 import AdminDashboard from "./AdminDashboard";
-
 const departments = [
   "it",
   "cse",
   "ec",
 ];
-
 export default function AdminLogin() {
   const [form, setForm] = useState({
     department: "",
@@ -17,7 +15,6 @@ export default function AdminLogin() {
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]:e.target.value});
   };
-
   const handleSubmit = (e) => {
     e.preventDefault();
     if (form.department && form.email) {
@@ -26,11 +23,8 @@ export default function AdminLogin() {
       setMessage("Please fill all fields.");
     }
   };
-
   if (loggedIn) {
-    return <AdminDashboard department={form.department} />;
-  }
-
+    return <AdminDashboard department={form.department} />;}
   return (
     <div className="form-container">
       <h2>Admin Login</h2>
