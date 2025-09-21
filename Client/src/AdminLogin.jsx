@@ -35,8 +35,7 @@ export default function AdminLogin() {
             name="department"
             value={form.department}
             onChange={handleChange}
-            required
-          >
+            required>
             <option value="">select department</option>
             {departments.map((dept) => (
               <option key={dept} value={dept}>{dept}</option>
