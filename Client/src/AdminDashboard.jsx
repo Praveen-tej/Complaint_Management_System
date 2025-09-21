@@ -33,7 +33,7 @@ export default function AdminDashboard({ department }) {
         alert("Failed to resolve complaint.");
       }
       setResolvingId(null);
-    }, 3000);
+    }, 2000);
   };
   const handleRemove = async (id) => {
     if (!window.confirm("Are you sure you want to remove this complaint?"))
