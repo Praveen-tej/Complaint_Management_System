@@ -36,6 +36,7 @@ export default function AdminDashboard({ department }) {
       setResolvingId(null);
     }, 2000); 
   };
+  
   const handleRemove = async (id) => {
     if (!window.confirm("Are you sure you want to remove this complaint?"))
       return;
