@@ -1,8 +1,6 @@
-const express = require('express');
+const express = require('express');   
 const router = express.Router();
 const Complaint = require('../models/Complaint');
-
-// Submit a new complaint
 router.post('/', async (req, res) => {
   try {
     const { department, complaintText } = req.body;
@@ -13,9 +11,6 @@ router.post('/', async (req, res) => {
     res.status(500).json({ error: 'Server error' });
   }
 });
-
-
-// Get complaints for a department (for admin)
 router.get('/:department', async (req, res) => {
   try {
     const department = req.params.department.toLowerCase();
@@ -25,8 +20,6 @@ router.get('/:department', async (req, res) => {
     res.status(500).json({ error: 'Server error' });
   }
 });
-
-// Mark a complaint as resolved
 router.patch('/resolve/:id', async (req, res) => {
   try {
     const complaint = await Complaint.findByIdAndUpdate(
@@ -42,8 +35,6 @@ router.patch('/resolve/:id', async (req, res) => {
     res.status(500).json({ error: "Server error" });
   }
 });
-
-// Delete a complaint by ID
 router.delete('/:id', async (req, res) => {
   try {
     const complaint = await Complaint.findByIdAndDelete(req.params.id);
@@ -55,5 +46,4 @@ router.delete('/:id', async (req, res) => {
     res.status(500).json({ error: "Server error" });
   }
 });
-
 module.exports = router;

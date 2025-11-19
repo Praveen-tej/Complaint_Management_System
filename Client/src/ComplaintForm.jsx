@@ -4,7 +4,6 @@ const departments = [
   "it",
   "cse",
   "ec",
-  // Add more as needed
 ];
 
 export default function ComplaintForm({ user }) {
@@ -17,14 +16,12 @@ export default function ComplaintForm({ user }) {
   const [complaints, setComplaints] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  // Extract department from email
   const email = user.email.toLowerCase();
   const match = email.match(/^[a-zA-Z0-9]+[0-9]{2}([a-z]+)@psnacet\.edu\.in$/);
   const emailDept = match ? match[1] : "";
 
   useEffect(() => {
     fetchComplaints();
-    // eslint-disable-next-line
   }, [department]);
 
   const handleChange = (e) => {
@@ -36,10 +33,9 @@ export default function ComplaintForm({ user }) {
     setMessage("");
     setLoading(true);
 
-    // Simulate a 3-second loading animation
+
     setTimeout(async () => {
       if (emailDept === form.department) {
-        // Department matches, submit to backend
         try {
           const res = await fetch("/api/complaints", {
             method: "POST",
@@ -59,7 +55,6 @@ export default function ComplaintForm({ user }) {
           setMessage("Server error. Please try again later.");
         }
       } else {
-        // Department does not match, do not send to admin
         setMessage(
           "Ivalid details"
         );
@@ -76,7 +71,7 @@ export default function ComplaintForm({ user }) {
         headers: { "Content-Type": "application/json" },
       });
       if (res.ok) {
-        fetchComplaints(); // Refresh the list after resolving
+        fetchComplaints(); 
       } else {
         alert("Failed to resolve complaint.");
       }
@@ -92,7 +87,6 @@ export default function ComplaintForm({ user }) {
         method: "DELETE",
       });
       if (res.ok) {
-        // Remove the complaint from the local state immediately
         setComplaints((prev) => prev.filter((c) => c._id !== id));
       } else {
         alert("Failed to remove complaint.");

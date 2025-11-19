@@ -1,6 +1,6 @@
-  import React, { useState } from "react";
+import React, { useState } from "react";
 import axios from "axios";
-
+  
 function AdminLogin() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -24,7 +24,6 @@ function AdminLogin() {
       setError("Server error. Please try again later.");
     }
   };
-
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
       <form
@@ -59,5 +58,4 @@ function AdminLogin() {
     </div>
   );
 }
-
 export default AdminLogin;
