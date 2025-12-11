@@ -20,6 +20,7 @@ router.get('/:department', async (req, res) => {
     res.status(500).json({ error: 'Server error' });
   }
 });
+
 router.patch('/resolve/:id', async (req, res) => {
   try {
     const complaint = await Complaint.findByIdAndUpdate(
@@ -35,6 +36,7 @@ router.patch('/resolve/:id', async (req, res) => {
     res.status(500).json({ error: "Server error" });
   }
 });
+
 router.delete('/:id', async (req, res) => {
   try {
     const complaint = await Complaint.findByIdAndDelete(req.params.id);
@@ -46,4 +48,5 @@ router.delete('/:id', async (req, res) => {
     res.status(500).json({ error: "Server error" });
   }
 });
+
 module.exports = router;
