@@ -9,7 +9,7 @@ function AdminLogin() {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("https://complaint-management-system-backend-do5r.onrender.com", {
+      const res = await axios.post("https://complaint-management-system-backend-8x06.onrender.com", {
         email,
         password,
       });
