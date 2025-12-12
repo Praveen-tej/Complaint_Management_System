@@ -5,7 +5,7 @@ const complaintsRoute = require("./routes/complaints");
 require('dotenv').config();
 const app = express();
 app.use(cors({
-  origin: 'http://localhost:5173'
+  origin: 'https://complaint-management-system-frontend.onrender.com/'
 }));
 
 app.use(express.json());
